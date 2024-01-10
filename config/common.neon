@@ -1,0 +1,29 @@
+parameters:
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+latte:
+	strictTypes: yes
+
+
+session:
+	expiration: 14 days
+
+
+di:
+	export:
+		parameters: no
+		tags: no
+
+extensions:
+    wsApi: App\WSApi\WSApiExtension
+
+wsApi:
+    debugMode: false
+    wsApi:
+        wsdlPath: %secretPath%/gp-webpay/wsdl/cws_v1.wsd
